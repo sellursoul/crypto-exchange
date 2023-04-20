@@ -1,1 +1,57 @@
-/* You can add global styles to this file, and also import other style files */
+@import "assets/styles/fonts/fonts";
+@import "assets/styles/colors/colors";
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import 'material-icons/iconfont/material-icons.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $dark-color;
+  overflow-x: hidden;
+}
+
+.navbar {
+  font-family: $Inter;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  top: 0;
+}
+
+.navbar-2 {
+  font-family: $Inter;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: $primary-color;
+  padding: 0;
+  top: 0;
+}
+
+.footer {
+  overflow: hidden;
+  margin-top: auto;
+  font-family:$Inter;
+  display: flex;
+  flex-direction: column;
+  padding: 60px 65px 30px;
+  gap: 40px;
+  width: 100%;
+  height: auto;
+  background-color: $primary-color;
+}
+
+button:hover {
+  cursor: pointer;
+}
+select:hover {
+  cursor: pointer;
+}
+a:hover {
+  cursor: pointer;
+}

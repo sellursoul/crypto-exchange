@@ -1,0 +1,65 @@
+<img class="up-picture" alt="picture" src="/assets/login_imgs/Placeholder.png">
+
+<section class="container">
+  <div class="left-container">
+    <div class="ellipse"></div>
+  </div>
+  <div class="right-container">
+    <div class="logo-container"><img alt="Logo" src="assets/login_imgs/log_logo.png"></div>
+    <div *ngIf="isLoading">
+      <app-loading-spinner></app-loading-spinner>
+    </div>
+    <div class="alert"></div>
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="Login()" *ngIf="!isLoading">
+      <div class="button-inputs-container">
+
+        <h2>Sing In to Dynamic</h2>
+
+        <div class="form-container">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="email@example.com" formControlName="email" required>
+            <mat-error
+              *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-container">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+            <button mat-icon-button matSuffix (click)="togglePasswordVisibility($event)" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error
+              *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">{{getPasswordErrorMessage()}}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="forgot-password">
+          <a href="#">Scan to login</a>
+          <a href="#" class="active">Forgot password</a>
+        </div>
+
+        <button class="singin-btn" type="submit" [disabled]="loginForm.invalid">Sing in</button>
+
+        <div class="register"><a>If you don’t have an account you can <a class="active">Register Here!</a></a></div>
+
+      </div>
+
+      <div class="socials">
+        <div class="text-socials-container">
+          or continue with
+        </div>
+        <div class="social-logo">
+          <a href="#"><img alt="Google Logo" src="assets/login_imgs/google.png"></a>
+          <a href="#"><img alt="Apple Logo" src="assets/login_imgs/apple.png"></a>
+          <a href="#"><img alt="Facebook Logo" src="assets/login_imgs/facebook.png"></a>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+</section>

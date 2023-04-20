@@ -1,0 +1,173 @@
+@import "src/assets/styles/colors/colors";
+@import "src/assets/styles/fonts/fonts";
+
+.up-picture{
+  position: absolute;
+  z-index: 2;
+  width: 45%;
+  height: 500px;
+  left: 50px;
+  top: 130px;
+}
+.container {
+  min-height: 100vh;
+  display: flex;
+
+  .left-container {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 135px 0 0;
+    background-color: $login-active-color;
+
+    .ellipse {
+      width: 100%;
+      height: 100%;
+      opacity: 0.17;
+      background-color: $white-color;
+      border-radius: 0 100% 0 0;
+    }
+  }
+
+  .right-container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    align-items: center;
+    gap: 10px;
+
+    .logo-container {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 30px 165px;
+      gap: 30px;
+    }
+
+    .login-form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+      gap: 10px;
+
+      .button-inputs-container {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+
+        h2 {
+          color: $white-color;
+          font-weight: 500;
+          font-size: 33px;
+          line-height: 47px;
+          font-family: $Inter;
+        }
+        .form-container {
+          width: 100%;
+          mat-form-field {
+            width: 100%;
+          }
+        }
+        .forgot-password {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          padding: 0;
+        }
+        .singin-btn {
+          width: 100%;
+          background-color: $active-color;
+          border-radius: 10px;
+          border: none;
+          height: 50px;
+          color: $white-color;
+          font-family: $Inter;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 22px;
+        }
+        .register {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+        }
+      }
+      .socials {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+        gap: 50px;
+
+        .text-socials-container {
+          margin-top: 3rem;
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+          align-items: center;
+          text-align: center;
+          color: $white-color;
+          font-family: $Inter;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 22px;
+        }
+        .text-socials-container::before,
+        .text-socials-container::after {
+          content: '';
+          flex: 1;
+          border-bottom: 1px solid #CCCED9;
+        }
+        .text-socials-container:not(:empty)::before {
+          margin-right: .25em;
+        }
+
+        .text-socials-container:not(:empty)::after {
+          margin-left: .25em;
+        }
+
+        .social-logo {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          padding: 0;
+          gap: 40px;
+          margin-bottom: 50px;
+        }
+      }
+    }
+  }
+}
+.active {
+  color: $active-color;
+}
+a {
+  color: $white-color;
+  font-family: $Inter;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+}
+a:hover {
+  opacity: 0.7;
+}
+button:hover {
+  opacity: 0.7;
+}

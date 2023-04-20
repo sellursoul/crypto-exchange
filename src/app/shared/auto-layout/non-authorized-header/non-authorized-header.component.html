@@ -1,0 +1,26 @@
+<div>
+  <section class="navbar_container">
+    <div class="logo">
+      <img src="../../../../assets/common_imgs/Logo.png" alt="Logo">
+    </div>
+    <ul class="nav_btns">
+      <li class="nav_btn"><a href="#">Market</a></li>
+      <li class="nav_btn"><a>Watchlist</a></li>
+      <li class="nav_btn"><a>Portfolio</a></li>
+      <li class="nav_btn"><a>Learn</a></li>
+    </ul>
+    <div class="login_btns">
+      <div class="en_usd_btn">
+        <select>
+          <option value="usd" selected>English | USD</option>
+        </select>
+      </div>
+      <div class="login">
+        <button class="sing_in" [routerLink]="['/auth', 'login']">Sing in</button>
+        <button class="register" [routerLink]="['/auth', 'register']">Register</button>
+      </div>
+    </div>
+  </section>
+  <hr/>
+</div>
+
