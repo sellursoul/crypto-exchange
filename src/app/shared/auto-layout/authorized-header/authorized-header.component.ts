@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {AuthService} from "../../../auth/shared/services/auth.service";
 
 @Component({
@@ -7,6 +7,7 @@ import {AuthService} from "../../../auth/shared/services/auth.service";
   styleUrls: ['./authorized-header.component.scss']
 })
 export class AuthorizedHeaderComponent {
+  @Input() menuPoints: string[]
 
   constructor(private auth: AuthService) {
   }

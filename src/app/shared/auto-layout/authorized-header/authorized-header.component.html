@@ -5,10 +5,7 @@
   </div>
 
   <ul class="nav_btns">
-    <li class="nav_btn"><a href="#">Market</a></li>
-    <li class="nav_btn"><a>Watchlist</a></li>
-    <li class="nav_btn"><a>Portfolio</a></li>
-    <li class="nav_btn"><a>Learn</a></li>
+    <li class="nav_btn" *ngFor="let point of menuPoints"><a href="#">{{point}}</a></li>
   </ul>
 
   <div class="wallet-trade">
@@ -17,7 +14,7 @@
         <option value="usd" selected>English | USD</option>
       </select>
     </div>
-    <button class="trade-history"><img alt="Logo" src="assets/header_imgs/Icon.png"> Trade History</button>
+    <button class="trade-history"><img alt="Logo" src="assets/header_imgs/Icon.png">Trade History</button>
     <button class="wallet"><img alt="Logo" src="assets/header_imgs/Icon%20Wallet.png"> Wallet</button>
     <a href="#" (click)="onLogout($event)">Log out</a>
   </div>

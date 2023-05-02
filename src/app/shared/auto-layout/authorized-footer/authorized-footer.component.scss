@@ -1,0 +1,252 @@
+@import "src/assets/styles/colors/colors";
+@import "src/assets/styles/fonts/fonts";
+
+.about_company {
+  flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+  gap: 30px;
+  margin-bottom: 40px;
+
+  .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0;
+    gap: 30px;
+  }
+
+  .download_links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 20px;
+
+    .download_link {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 5px 10px;
+      gap: 15px;
+      height: 42px;
+      background: $dark-color;
+      border-radius: 5px;
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+
+      .text {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+
+        .upper_text {
+          margin: 0;
+          font-size: 10px;
+          line-height: 14px;
+          color: $white-color;
+        }
+
+        .lower_text {
+          margin: 0;
+          font-weight: 500;
+          font-size: 11px;
+          line-height: 16px;
+          color: $white-color;
+
+        }
+      }
+    }
+  }
+}
+
+.footer-links {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0;
+
+  .link {
+    font-family: $Inter;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    gap: 10px;
+
+    .email-container {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+
+      mat-form-field {
+        height: 50px;
+      }
+
+      .send-btn {
+        font-family: $Inter;
+        width: 77px;
+        height: 53px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 13px 10px;
+        gap: 10px;
+        border: none;
+        background: $active-color;
+        color: $white-color;
+        border-radius: 5px;
+      }
+
+      mat-label {
+        color: $gray-text-color;
+        font-family: $Inter;
+      }
+
+      input {
+        color: $gray-text-color;
+        font-family: $Inter;
+      }
+
+      input::placeholder {
+        color: $gray-text-color;
+      }
+    }
+
+    h3 {
+      font-weight: 500;
+      font-size: 19px;
+      line-height: 23px;
+      letter-spacing: 0.02em;
+      color: $white-color;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0;
+      gap: 20px;
+
+      li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 1px 0;
+        gap: 10px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: $gray-color;
+      }
+    }
+
+    .payments {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0;
+      gap: 40px;
+
+      .payments-text {
+        font-family: $Inter;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        margin-top: 20px;
+        color: $footer-text-color;
+        mix-blend-mode: normal;
+      }
+      .cards {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0;
+        gap: 13px;
+        img {
+          width: 80px;
+        }
+      }
+    }
+  }
+}
+
+.footer_down_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 30px;
+
+  .down_container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0;
+
+    .copy_right {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 0;
+      gap: 40px;
+
+      .down_links {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0;
+        gap: 20px;
+      }
+    }
+    .socials {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0;
+      gap: 15px;
+    }
+  }
+}
+
+.vl {
+  width: 0;
+  height: 20px;
+  border: 1px solid #CCCED9
+}
+
+p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: $info-color;
+}
+
+li:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  background: rgba(204, 206, 217, 0.15);
+}
+

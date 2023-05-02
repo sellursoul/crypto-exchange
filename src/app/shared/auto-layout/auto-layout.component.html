@@ -1,9 +1,9 @@
 <div class="auto-layout-container">
   <div *ngIf="!authorized" class="navbar">
-    <app-non-authorized-header></app-non-authorized-header>
+    <app-non-authorized-header [menuPoints]="menuPoints"></app-non-authorized-header>
   </div>
   <div *ngIf="authorized" class="navbar-2">
-    <app-authorized-header></app-authorized-header>
+    <app-authorized-header [menuPoints]="menuPoints"></app-authorized-header>
   </div>
 
   <div class="main-container">
@@ -11,8 +11,8 @@
   </div>
 
   <div class="footer">
-    <app-non-authorized-footer *ngIf="!authorized"></app-non-authorized-footer>
-    <app-authorized-footer *ngIf="authorized"></app-authorized-footer>
+    <app-non-authorized-footer *ngIf="!authorized" [downloadLinks]="downloadLinks"></app-non-authorized-footer>
+    <app-authorized-footer *ngIf="authorized" [downloadLinks]="downloadLinks"></app-authorized-footer>
   </div>
 </div>
 

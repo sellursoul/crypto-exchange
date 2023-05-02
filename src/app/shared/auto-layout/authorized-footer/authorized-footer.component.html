@@ -1,4 +1,66 @@
-<section class="footer_container">
-Authorized footer
+<section class="about_company">
+  <div class="logo"><img src="../../../../assets/common_imgs/Logo.png" alt="Logo"></div>
+  <div class="download_links">
+    <a class="download_link" *ngFor="let link of downloadLinks">
+      <img src="{{link.src}}" alt="{{link.alt}}">
+      <div class="text">
+        <p class="upper_text">{{link.upperText}}</p>
+        <p class="lower_text">{{link.lowerText}}</p>
+      </div>
+    </a>
+  </div>
 </section>
 
+<section class="footer-links">
+  <div class="link" *ngFor="let point of footerLinks">
+    <h3>{{point.title}}</h3>
+    <ul class="lower_links">
+      <li *ngFor="let link of point.values">{{link}}</li>
+    </ul>
+  </div>
+  <div class="link">
+    <h3>Newsletter</h3>
+    <div class="email-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="email@example.com">
+      </mat-form-field>
+      <button class="send-btn">Send</button>
+    </div>
+    <div class="payments">
+      <div class="payments-text">We accept following payment
+        <div>systems</div>
+      </div>
+      <div class="cards">
+        <a><img alt="payPal" src="assets/footer-imgs/auth-footer-imgs/paypal.png"></a>
+        <a><img alt="MasterCard" src="assets/footer-imgs/auth-footer-imgs/mastercard.png"></a>
+        <a><img alt="Bitcoin" src="assets/footer-imgs/auth-footer-imgs/btc.png"></a>
+        <a><img alt="E-wallet" src="assets/footer-imgs/auth-footer-imgs/e-wallet.png"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="footer_down_container">
+  <hr/>
+  <div class="down_container">
+    <div class="copy_right">
+      <p>© 2022 dynamic. All rights reserved</p>
+      <div class="down_links">
+        <div class="vl"></div>
+        <p><a>Privacy</a></p>
+      </div>
+      <div class="down_links">
+        <div class="vl"></div>
+        <p><a>Terms</a></p>
+      </div>
+      <div class="down_links">
+        <div class="vl"></div>
+        <p><a>Sitemap</a></p>
+      </div>
+    </div>
+    <div class="socials">
+      <a href="#" *ngFor="let social of socialIcons"><img src="{{social.src}}" alt="{{social.alt}}"></a>
+    </div>
+  </div>
+</section>

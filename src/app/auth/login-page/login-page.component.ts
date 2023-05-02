@@ -37,17 +37,24 @@ export class LoginPageComponent implements OnInit {
   }
 
   getErrorMessage() {
-    if (this.loginForm.get('email')?.hasError('required')) {
+    if (this.email?.hasError('required')) {
       return 'Please, enter email';
     }
-    return this.loginForm.get('email')?.hasError('email') ? 'Please, enter correct email' : '';
+    return this.email?.hasError('email') ? 'Please, enter correct email' : '';
   }
 
   getPasswordErrorMessage() {
-    if (this.loginForm.get('password')?.hasError('required')) {
+    if (this.password?.hasError('required')) {
       return 'Please, enter password';
     }
-    return this.loginForm.get('password')?.hasError('minlength') ? `Minimal password length 6 symbols` : '';
+    return this.password?.hasError('minlength') ? `Minimal password length 6 symbols` : '';
+  }
+
+  get email() {
+    return this.loginForm.get('email')
+  }
+  get password() {
+    return this.loginForm.get('password')
   }
 
   Login() {

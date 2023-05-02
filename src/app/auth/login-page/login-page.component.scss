@@ -101,6 +101,14 @@
           display: flex;
           flex-direction: row;
           justify-content: center;
+          p {
+            color: $white-color;
+            font-family: $Inter;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 22px;
+          }
         }
       }
       .socials {

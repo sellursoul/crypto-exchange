@@ -1,75 +1,52 @@
 @import "src/assets/styles/colors/colors";
+@import "src/assets/styles/fonts/fonts";
 
 .home-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin: 20px 0;
+  margin: 10px 0;
+  gap: 150px;
 
-  .greeting-section {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 30px 114px;
-    gap: 10px;
-    width: 90%;
+  .greeting-cont {
+    width: 95%;
     background: $primary-color;
     border-radius: 20px;
-
-    .text-and-img {
-      width: 90%;
-
-      .content {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0;
-        gap: 80px;
-
-        .text-and-btn {
-          display: flex;
-          flex-direction: column;
-          width: 50%;
-          align-items: flex-start;
-          padding: 0;
-          gap: 10px;
-
-          .text {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 0;
-            color: $white-color;
-            h3 {
-              font-weight: 700;
-              font-size: 60px;
-              line-height: 72px;
-            }
-            p {
-              font-weight: 400;
-              font-size: 18px;
-              line-height: 24px;
-            }
-          }
-          button {
-            width: 244px;
-            height: 60px;
-            background: $active-color;
-            border-radius: 10px;
-            border: none;
-            color: $white-color;
-          }
-        }
-
-        .logos {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          padding: 0;
-          gap: 50px;
-        }
-      }
-    }
   }
+
+  .top-market-cont {
+    width: 80%;
+  }
+
+  .easy-cont {
+    width: 100%;
+    background: $primary-color;
+  }
+
+  .download-cont {
+    width: 80%;
+  }
+
+  .best-services-cont {
+    width: 80%;
+  }
+
+  .investors-cont {
+    width: 100%;
+    background: $primary-color;
+  }
+
+  .mining-cont {
+    width: 60%;
+    background: #3671E9;
+    border-radius: 15px;
+  }
+}
+
+a {
+  font-family: $Inter;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
 }

@@ -1,0 +1,90 @@
+@import "src/assets/styles/colors/colors";
+@import "src/assets/styles/fonts/fonts";
+
+.top-market {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  gap: 60px;
+
+  .heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 10px;
+
+    a {
+      color: $active-color;
+    }
+
+    h1 {
+      font-family: $Inter;
+      font-weight: 600;
+      font-size: 48px;
+      line-height: 56px;
+      color: $white-color;
+    }
+  }
+
+  .cards {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+
+    .card {
+      padding: 3rem;
+      font-family: $Inter;
+      color: $white-color;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 250px;
+      height: 260px;
+      background: $primary-color;
+      border-radius: 15px;
+
+      .coin-price {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+
+        .coin-name {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding: 0;
+          gap: 10px;
+
+          .name {
+            background: #080808;
+            border-radius: 5px;
+            padding: .3rem;
+            height: 2rem;
+            color: $active-color;
+            font-family: $Inter;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 22px;
+          }
+
+          img {
+            width: 2rem;
+            height: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+a:hover {
+  opacity: 0.7;
+}

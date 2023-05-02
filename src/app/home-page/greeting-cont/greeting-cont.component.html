@@ -1,0 +1,21 @@
+<div class="greeting-section">
+  <div class="text-and-img">
+    <div class="content">
+      <div class="text-and-btn">
+        <div class="text">
+          <h3>Buy & Sell Crypto Instant</h3>
+          <p>Join world’s biggest & tursted Exchange.Trade in Bitcoin, Ethereum, Ripple and many more currencies.</p>
+        </div>
+        <button>Start trading</button>
+      </div>
+      <div class="logos">
+        <div class="logo" *ngFor="let item of logos">
+          <img *ngFor="let src of item.srcs" src="{{src}}" alt="{{item.alt}}">
+        </div>
+      </div>
+    </div>
+    <div class="image">
+      <img class="placeholder-img" src="assets/home-imgs/Group%201252.png" alt="Placeholder"/>
+    </div>
+  </div>
+</div>

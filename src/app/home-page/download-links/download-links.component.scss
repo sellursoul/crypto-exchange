@@ -1,0 +1,80 @@
+@import "src/assets/styles/colors/colors";
+@import "src/assets/styles/fonts/fonts";
+
+.download-sect {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 5rem;
+  gap: 74px;
+
+  img {
+    width: 40%;
+  }
+
+
+  .downloads {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 0;
+    gap: 40px;
+    font-family: $Inter;
+    color: $white-color;
+
+    a {
+      color: $active-color;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    p {
+      color: $gray-color;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    h2 {
+      font-weight: 600;
+      font-size: 48px;
+      line-height: 56px;
+    }
+
+    .cards {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        padding: 2rem 0;
+        gap: 1px;
+        width: 200px;
+        height: 200px;
+        background-color: $primary-color;
+
+        h4 {
+          color: $white-color;
+        }
+
+        img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+}
+
+a:hover {
+  opacity: 0.7;
+}

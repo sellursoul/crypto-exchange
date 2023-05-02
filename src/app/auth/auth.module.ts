@@ -11,9 +11,13 @@ import {MatButtonModule} from "@angular/material/button";
 import {HttpClientModule} from "@angular/common/http";
 import {LoadingSpinnerComponent} from "../shared/loading-spinner/loading-spinner.component";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {CoreModule} from "../shared/modules/core.module";
+import {MatchPasswordDirective} from "./shared/services/password-validator.directive";
+import {MatCheckboxModule} from "@angular/material/checkbox";
 
 const routes: Routes = [
-  {path: '', children: [
+  {
+    path: '', children: [
       {path: 'login', component: LoginPageComponent},
       {path: 'register', component: RegisterPageComponent}
     ]
@@ -23,7 +27,7 @@ const routes: Routes = [
   declarations: [
     LoginPageComponent,
     RegisterPageComponent,
-    LoadingSpinnerComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     CommonModule,
@@ -31,13 +35,15 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     ReactiveFormsModule,
     MatFormFieldModule,
+    CoreModule,
     MatInputModule,
     MatIconModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatCheckboxModule
   ],
   exports: [RouterModule],
-  providers: []
+  providers: [MatchPasswordDirective]
 })
 export class AuthModule {
 }

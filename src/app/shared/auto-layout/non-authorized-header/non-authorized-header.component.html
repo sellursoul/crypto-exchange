@@ -4,10 +4,7 @@
       <img src="../../../../assets/common_imgs/Logo.png" alt="Logo">
     </div>
     <ul class="nav_btns">
-      <li class="nav_btn"><a href="#">Market</a></li>
-      <li class="nav_btn"><a>Watchlist</a></li>
-      <li class="nav_btn"><a>Portfolio</a></li>
-      <li class="nav_btn"><a>Learn</a></li>
+      <li class="nav_btn" *ngFor="let point of menuPoints"><a href="#">{{point}}</a></li>
     </ul>
     <div class="login_btns">
       <div class="en_usd_btn">

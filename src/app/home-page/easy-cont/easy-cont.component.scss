@@ -1,0 +1,96 @@
+@import "src/assets/styles/colors/colors";
+@import "src/assets/styles/fonts/fonts";
+
+.easy-way {
+  display: flex;
+  justify-content: space-between;
+  padding: 5rem 5rem;
+  width: 100%;
+  font-family: $Inter;
+  color: $white-color;
+  gap: 30px;
+
+  .text-btn {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    gap: 20px;
+
+    h2 {
+      font-weight: 600;
+      font-size: 48px;
+      line-height: 56px;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: $active-color;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 24px;
+      color: $gray-color;
+
+    }
+  }
+
+  .easy-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .first-row {
+      width: 700px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 10px;
+    }
+
+    .second-row {
+      width: 700px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .easy-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 250px;
+      width: 300px;
+      border-radius: 15px;
+      padding: 1rem 3rem;
+      background-color: $dark-color;
+
+      h4 {
+        font-weight: 600;
+        font-size: 19px;
+        line-height: 23px;
+        text-align: center;
+        letter-spacing: 0.02em;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        text-align: center;
+        color: $gray-color;
+      }
+    }
+  }
+}
+a:hover {
+  opacity: 0.7;
+}

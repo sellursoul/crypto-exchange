@@ -1,1 +1,82 @@
-<p>register-page works!</p>
+<img class="up-picture" alt="picture" src="/assets/login_imgs/Placeholder.png">
+
+<section class="container">
+  <div class="left-container">
+    <div class="ellipse"></div>
+  </div>
+  <div class="right-container">
+    <div class="logo-container"><img alt="Logo" src="assets/login_imgs/log_logo.png"></div>
+    <div *ngIf="isLoading">
+      <app-loading-spinner></app-loading-spinner>
+    </div>
+    <div class="alert"></div>
+    <form class="register-form" [formGroup]="registrationForm" (ngSubmit)="Register()" *ngIf="!isLoading">
+      <div class="button-inputs-container">
+
+        <h2>Create an account</h2>
+
+        <div class="form-container">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="email@example.com" formControlName="email" required>
+            <mat-error
+              *ngIf="email?.touched && registrationForm.get('email')?.invalid">{{getEmailErrorMessage()}}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-container">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="passHide ? 'password' : 'text'" formControlName="password">
+            <button mat-icon-button matSuffix (click)="togglePasswordVisibility($event)"
+                    [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="passHide">
+              <mat-icon>{{passHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error
+              *ngIf="password?.touched && password?.invalid">{{getPasswordErrorMessage()}}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-container">
+          <mat-form-field appearance="fill">
+            <mat-label>Repeat the password</mat-label>
+            <input matInput [type]="repPassHide ? 'password' : 'text'" formControlName="repeatpassword"
+                   matchPassword="password">
+            <button mat-icon-button matSuffix (click)="toggleRepPasswordVisibility($event)"
+                    [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="repPassHide">
+              <mat-icon>{{repPassHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error
+              *ngIf="repeatpassword?.touched && repeatpassword?.invalid">{{getRepeatPasswordErrorMessage()}}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="agreement">
+          <input type="checkbox" formControlName="agreement" required>
+          <p>By Register i agree that i’m 18 years of age or older, ot the <a>User Agreements, Privacy Policy, Cookie
+            Policy.</a></p>
+        </div>
+
+        <button class="register-btn" type="submit" [disabled]="registrationForm.invalid">Register</button>
+
+        <div class="register"><a>Already have an account. <a class="active" [routerLink]="['/auth', 'login']">Sign in</a></a></div>
+
+      </div>
+
+      <div class="socials">
+        <div class="text-socials-container">
+          or continue with
+        </div>
+        <div class="social-logo">
+          <a href="#"><img alt="Google Logo" src="assets/login_imgs/google.png"></a>
+          <a href="#"><img alt="Apple Logo" src="assets/login_imgs/apple.png"></a>
+          <a href="#"><img alt="Facebook Logo" src="assets/login_imgs/facebook.png"></a>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+</section>

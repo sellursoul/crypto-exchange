@@ -1,0 +1,82 @@
+@import "src/assets/styles/colors/colors";
+@import "src/assets/styles/fonts/fonts";
+
+.best-services-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  font-family: $Inter;
+  color: $white-color;
+
+  .text-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a {
+      color: $active-color;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 24px;
+    }
+    h2 {
+      font-weight: 600;
+      font-size: 48px;
+      line-height: 56px;
+    }
+    p {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 24px;
+      text-align: center;
+      color: $gray-color;
+    }
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    padding: 0;
+    flex-wrap: wrap;
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem 1rem;
+      border-radius: 15px;
+      background: $primary-color;
+      width: 250px;
+      height: 200px;
+
+      img {
+        width: 40px;
+        height: 40px;
+      }
+
+      h4 {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 23px;
+        letter-spacing: 0.02em;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 22px;
+        color: $info-color;
+      }
+    }
+  }
+
+}
+
+a:hover {
+  opacity: 0.7;
+}

@@ -1,0 +1,20 @@
+<div class="top-market">
+  <div class="heading">
+    <a>Top market</a>
+    <h1>Get Various Crypto Coin</h1>
+  </div>
+  <div class="cards">
+    <div class="card" *ngFor="let currency of currencies">
+      <div class="coin-price">
+        <div class="coin-name" >
+          <div>
+            <img src="{{currency.src.src}}" alt="{{currency.src.alt}}">
+          </div>
+          <a><div class="name">{{currency.name}}</div></a>
+        </div>
+        <p>{{currency.price | currency:'USD':'symbol':'1.2-2' }}</p>
+      </div>
+      <app-line-chart [price]="currency.price"></app-line-chart>
+    </div>
+  </div>
+</div>

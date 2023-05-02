@@ -1,0 +1,18 @@
+<div class="mining-section">
+  <div class="text">
+    <div class="info">
+      <h2>Start mining now</h2>
+      <p>Join now with DYNAMIC to get the latest news and start mining now</p>
+    </div>
+    <div class="email">
+      <mat-form-field class="email-form-field">
+        <mat-label>Enter your email</mat-label>
+        <input matInput type="text" [formControl]="value">
+        <button *ngIf="value.value" matSuffix mat-icon-button aria-label="Clear" (click)="clearValue()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <button class="subscribe-btn" mat-raised-button>Subscribe</button>
+    </div>
+  </div>
+</div>
