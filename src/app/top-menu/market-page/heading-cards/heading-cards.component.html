@@ -1,0 +1,49 @@
+<div class="heading-cont">
+  <div class="heading">
+    <div class="heading-text">
+      <h2>Cryptocurrency Prices by Market Cap</h2>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+        industry's standard dummy text ever since the 1500s, when an unknown</p>
+    </div>
+    <div class="heading-selections">
+      <div>
+        <button class="open-btn" mat-icon-button [matMenuTriggerFor]="belowMenu" aria-label="Filter">
+          <mat-icon>sort</mat-icon>
+          Filter
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+        <mat-menu #belowMenu="matMenu" yPosition="below">
+          <button mat-menu-item>
+            <mat-icon>dialpad</mat-icon>
+            <span>Redial</span>
+          </button>
+        </mat-menu>
+      </div>
+      <div>
+        <button class="open-btn" mat-icon-button [matMenuTriggerFor]="belowMenu" aria-label="Date">
+          <mat-icon>event</mat-icon>
+          Date
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+        <mat-menu #belowMenu="matMenu" yPosition="below">
+          <button mat-menu-item>
+            <mat-icon>dialpad</mat-icon>
+            <span>Redial</span>
+          </button>
+        </mat-menu>
+      </div>
+    </div>
+  </div>
+  <div class="heading-cards">
+    <a class="card" *ngFor="let currency of currencies">
+      <div class="coin-info">
+        <div class="coin-name">
+          <img src="{{currency.src.src}}" alt="{{currency.src.alt}}">
+          <p>{{currency.name}}</p>
+        </div>
+        <p>{{currency.price | currency}}</p>
+      </div>
+      <app-line-chart class="chart-cont" [price]="currency.price"></app-line-chart>
+    </a>
+  </div>
+</div>

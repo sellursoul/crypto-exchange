@@ -1,6 +1,60 @@
+@import "src/assets/styles/colors/colors";
+@import "src/assets/styles/fonts/fonts";
+
 .auto-layout-container {
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  gap: 80px;
+  gap: 5rem;
+
+  .navbar {
+    font-family: $Inter;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    top: 0;
+  }
+
+  .navbar-2 {
+    font-family: $Inter;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: $primary-color;
+    padding: 0;
+    top: 0;
+  }
+
+  .footer {
+    overflow: hidden;
+    margin-top: auto;
+    font-family: $Inter;
+    display: flex;
+    flex-direction: column;
+    padding: 3.75rem 4.06rem 1.875rem;
+    gap: 2.5rem;
+    width: 100%;
+    height: auto;
+    background-color: $primary-color;
+  }
+
+  @media (max-width: 768px) {
+    .footer {
+      width: 100%;
+      padding: 1.875rem 0.938rem;
+      gap: 1.25rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .auto-layout-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
 }

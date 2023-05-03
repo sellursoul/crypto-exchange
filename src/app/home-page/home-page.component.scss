@@ -6,13 +6,13 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin: 10px 0;
-  gap: 150px;
+  margin: 0.625rem 0;
+  gap: 9.375rem;
 
   .greeting-cont {
-    width: 95%;
+    width: 96%;
     background: $primary-color;
-    border-radius: 20px;
+    border-radius: 1.25rem;
   }
 
   .top-market-cont {
@@ -38,15 +38,15 @@
   }
 
   .mining-cont {
-    width: 60%;
+    width: 70%;
     background: #3671E9;
-    border-radius: 15px;
+    border-radius: 0.9375rem;
   }
 }
 
 a {
   font-family: $Inter;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
 }

@@ -1,10 +1,10 @@
-<div>
-  <section class="navbar_container">
+<section class="navbar_container">
+  <div class="navbar_area">
     <div class="logo">
       <img src="../../../../assets/common_imgs/Logo.png" alt="Logo">
     </div>
     <ul class="nav_btns">
-      <li class="nav_btn" *ngFor="let point of menuPoints"><a href="#">{{point}}</a></li>
+      <li class="nav_btn" *ngFor="let point of menuPoints"><a [routerLink]="['/menu', point | lowercase]">{{point}}</a></li>
     </ul>
     <div class="login_btns">
       <div class="en_usd_btn">
@@ -17,7 +17,8 @@
         <button class="register" [routerLink]="['/auth', 'register']">Register</button>
       </div>
     </div>
-  </section>
-  <hr/>
-</div>
+  </div>
+  <div class="hr"></div>
+</section>
+
 

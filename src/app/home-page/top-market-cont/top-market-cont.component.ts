@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {PriceService} from "../services/price.service";
 import {map, switchMap, timer} from "rxjs";
 import {Icon} from "../../shared/interfaces/interfaces";
+import {PriceService} from "../../shared/services/price.service";
 
 @Component({
   selector: 'app-top-market-cont',
@@ -21,7 +21,7 @@ export class TopMarketContComponent implements OnInit{
   }
 
   ngOnInit() {
-    timer(0, 60000000).pipe(
+    timer(0, 60000).pipe(
       switchMap(() => {
         return this.priceService.getCurrencies('BTC,BNB,ETH,XRP').pipe(
           map((data) => {

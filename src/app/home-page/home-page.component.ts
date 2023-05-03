@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {PriceService} from "./services/price.service";
-import {map, switchMap, timer} from "rxjs";
-import {Icon, Logo} from "../shared/interfaces/interfaces";
+import {PriceService} from "../shared/services/price.service";
 
 @Component({
   selector: 'app-home-page',

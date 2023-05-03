@@ -7,7 +7,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 65px;
+  padding: 1.875rem 4.0625rem;
 
   .logo {
     width: 15%;
@@ -17,7 +17,7 @@
     padding: 0;
 
     img {
-      height: 40px;
+      height: 2.5rem;
       left: 0;
       border-radius: 0;
     }
@@ -29,20 +29,20 @@
     justify-content: center;
     align-items: flex-start;
     padding: 0;
-    gap: 40px;
+    gap: 2.5rem;
 
     .nav_btn {
       font-family: $Inter;
       display: flex;
       flex-direction: column;
-      gap: 2%;
+      gap: 0.5rem;
       align-items: flex-start;
 
       a {
         text-decoration: none;
         font-weight: 400;
-        font-size: 16px;
-        line-height: 22px;
+        font-size: 1rem;
+        line-height: 1.375rem;
         color: $white-color;
       }
 
@@ -58,20 +58,20 @@
     flex-direction: row;
     align-items: center;
     padding: 0;
-    gap: 30px;
+    gap: 1.875rem;
 
     .en_usd_btn {
       display: flex;
       flex-direction: row;
       align-items: center;
       padding: 0;
-      gap: 30px;
+      gap: 1.875rem;
 
       select {
         background: none;
         font-weight: 400;
-        font-size: 14px;
-        line-height: 17px;
+        font-size: 0.875rem;
+        line-height: 1.0625rem;
         color: $info-color;
         border: none;
 
@@ -90,10 +90,10 @@ button {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  gap: 20px;
+  padding: 1.25rem;
+  gap: 1.25rem;
   color: #6C7080;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   border: none;
   text-align: center;
 }
@@ -101,6 +101,7 @@ button {
 button:hover {
   opacity: 0.7;
 }
+
 a {
   font-family: $Inter;
   text-decoration: none;

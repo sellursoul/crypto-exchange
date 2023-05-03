@@ -8,58 +8,57 @@
   width: 100%;
   font-family: $Inter;
   color: $white-color;
-  gap: 30px;
+  gap: 1.875rem;
 
   .text-btn {
     display: flex;
     flex-direction: column;
     width: 48%;
-    gap: 20px;
+    gap: 1.25rem;
 
     h2 {
       font-weight: 600;
-      font-size: 48px;
-      line-height: 56px;
+      font-size: 3rem;
+      line-height: 3.5rem;
     }
 
     a {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 0.625rem;
       color: $active-color;
       font-weight: 400;
-      font-size: 18px;
-      line-height: 24px;
+      font-size: 1.125rem;
+      line-height: 1.5rem;
     }
 
     p {
       font-weight: 400;
-      font-size: 18px;
-      line-height: 24px;
+      font-size: 1.125rem;
+      line-height: 1.5rem;
       color: $gray-color;
-
     }
   }
 
   .easy-cards {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 1.25rem;
 
-    .first-row {
-      width: 700px;
+    .first-row,
+    .second-row {
+      width: 43.75rem;
       display: flex;
       flex-direction: row;
+      gap: 0.625rem;
+    }
+
+    .first-row {
       justify-content: flex-start;
-      gap: 10px;
     }
 
     .second-row {
-      width: 700px;
-      display: flex;
-      flex-direction: row;
       justify-content: flex-end;
-      gap: 10px;
     }
 
     .easy-card {
@@ -67,30 +66,31 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 250px;
-      width: 300px;
-      border-radius: 15px;
-      padding: 1rem 3rem;
+      height: 15.625rem;
+      width: 18.75rem;
+      border-radius: 0.9375rem;
+      padding: 0.0625rem 1.875rem;
       background-color: $dark-color;
 
       h4 {
         font-weight: 600;
-        font-size: 19px;
-        line-height: 23px;
+        font-size: 1.1875rem;
+        line-height: 1.4375rem;
         text-align: center;
         letter-spacing: 0.02em;
       }
 
       p {
         font-weight: 400;
-        font-size: 16px;
-        line-height: 22px;
+        font-size: 1rem;
+        line-height: 1.375rem;
         text-align: center;
         color: $gray-color;
       }
     }
   }
 }
+
 a:hover {
   opacity: 0.7;
 }

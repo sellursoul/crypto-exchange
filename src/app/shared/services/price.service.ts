@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {BehaviorSubject, map, Observable, switchMap} from "rxjs";
-import {Icon} from "../../shared/interfaces/interfaces";
+import {Observable} from "rxjs";
+import {Icon} from "../interfaces/interfaces";
 
 @Injectable({
   providedIn: 'root'

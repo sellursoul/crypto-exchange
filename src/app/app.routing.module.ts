@@ -6,7 +6,8 @@ import {HomePageComponent} from "./home-page/home-page.component";
 const routes: Routes = [
   {path: '', component: AutoLayoutComponent, children: [
     {path: '', redirectTo: '/', pathMatch: 'full'},
-    {path: '', component: HomePageComponent}
+    {path: '', component: HomePageComponent},
+    {path: 'menu', loadChildren: () => import('./top-menu/top-menu.module').then(m => m.TopMenuModule)},
   ]},
   {path:'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)},
   {path: '**', redirectTo: '/'}

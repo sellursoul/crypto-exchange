@@ -1,5 +1,6 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {ChartDataset, ChartOptions} from "chart.js";
+import {BaseChartDirective} from "ng2-charts";
 
 @Component({
   selector: 'app-line-chart',
@@ -10,10 +11,12 @@ import {ChartDataset, ChartOptions} from "chart.js";
 export class LineChartComponent implements OnInit, OnChanges {
   @Input() price: number
 
+  chart: number[] = []
+
   chartData: ChartDataset[] = [
     {
       label: '',
-      data: [],
+      data: this.chart,
 
       pointRadius: 0,
       borderColor: '#2D2F33',
@@ -67,24 +70,32 @@ export class LineChartComponent implements OnInit, OnChanges {
   };
 
   constructor() {
+
   }
 
   ngOnInit(): void {
-    let date = new Date().getMinutes()
-    this.chartData[0].data.push(this.price)
-    this.chartLabels.push(date.toLocaleString())
-    }
+    /*setInterval(() => {
+      console.log(this.chart)
+      console.log(this.price)
+    }, 61000)*/
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (this.price) {
-      let date = new Date().getMinutes()
-      this.chartData[0].data.push(this.price)
-      this.chartLabels.push(date.toLocaleString())
-      if (this.chartData[0].data.length >= 10 && this.chartLabels.length >= 10) {
-        this.chartData[0].data.shift()
-        this.chartLabels.shift()
+    if (this.price !== undefined) {
+      const date = new Date().toLocaleTimeString();
+      this.chart.push(this.price);
+      this.chartLabels.push(date);
+
+      if (this.chart.length > 10) {
+        this.chart.shift();
+        this.chartLabels.shift();
       }
-      console.log(this.chartData[0].data)
+      this.chartData = [
+        {
+          label: '',
+          data: this.chart
+        }
+      ];
     }
   }
 

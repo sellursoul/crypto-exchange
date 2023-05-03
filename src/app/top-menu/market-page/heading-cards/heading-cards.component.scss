@@ -1,0 +1,106 @@
+@import "src/assets/styles/colors/colors";
+@import "src/assets/styles/fonts/fonts";
+
+.heading-cont {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 3.125rem;
+  font-family: $Inter;
+  color: $white-color;
+
+  .heading {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0;
+
+    .heading-text {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      gap: 1.875rem;
+
+      h2 {
+        font-weight: 500;
+        font-size: 2.0625rem;
+        line-height: 2.5rem;
+        letter-spacing: 0.00125rem;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 0.875rem;
+        line-height: 1.0625rem;
+        color: $gray-color;
+      }
+    }
+
+    .heading-selections {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      margin-top: 0.8125rem;
+      align-items: center;
+      gap: 0.3125rem;
+      padding: 0;
+      color: $gray-color;
+
+      .open-btn {
+        width: 7.5rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.625rem;
+        font-weight: 400;
+        font-size: 0.875rem;
+        line-height: 1.0625rem;
+      }
+    }
+  }
+
+  .heading-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    padding: 0;
+    width: 100%;
+
+    .card {
+      display: flex;
+      flex-direction: row;
+      min-width: 16rem;
+      width: 24%;
+      height: auto;
+      justify-content: space-between;
+      gap: 1.25rem;
+      padding: 1rem;
+      background-color: $dark-color;
+      border-radius: 0.9375rem;
+
+      .coin-info {
+        max-width: 30%;
+
+        .coin-name {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 0.625rem;
+          font-weight: 500;
+          font-size: 1.1875rem;
+          line-height: 1.4375rem;
+
+          img {
+            width: 1.875rem;
+            height: 1.875rem;
+          }
+        }
+      }
+    }
+  }
+}
