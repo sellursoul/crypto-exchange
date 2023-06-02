@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Icon} from "../interfaces/interfaces";
+import {Icon, PriceRespData} from "../interfaces/interfaces";
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +13,9 @@ export class PriceService {
   constructor(private http: HttpClient) {
   }
 
-  getCurrencies(symbol: string): Observable<any> {
+  getCurrencies(symbol: string): Observable<PriceRespData> {
     let headers = new HttpHeaders({"X-CMC_PRO_API_KEY": this.apiKey});
-    return this.http.get(`https://pro-api.coinmarketcap.com/v2/cryptocurrency/quotes/latest?symbol=${symbol}`, {headers: headers});
+    return this.http.get<PriceRespData>(`https://pro-api.coinmarketcap.com/v2/cryptocurrency/quotes/latest?symbol=${symbol}`, {headers: headers});
   }
 
   updateData(data: any[], icons?: Icon[]) {
@@ -27,5 +27,4 @@ export class PriceService {
       }
     })
   }
-
 }

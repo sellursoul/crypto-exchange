@@ -8,18 +8,36 @@ import {MatMenuModule} from "@angular/material/menu";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import { NgChartsModule } from 'ng2-charts';
-import {AppModule} from "../app.module";
 import {CoreModule} from "../shared/modules/core.module";
+import {MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatSortModule} from "@angular/material/sort";
+import {WatchlistPageComponent} from "./watchlist-page/watchlist-page.component";
+import {WatchlistCoinsComponent} from "./watchlist-page/watchlist-coins/watchlist-coins.component";
+import {WatchlistOptionalsComponent} from "./watchlist-page/watchlist-optionals/watchlist-optionals.component";
+import {TableComponent} from "./shared/table/table.component";
+import {CoinDataService} from "./shared/services/coin-data.service";
+import {AddCoinModalComponent} from "./watchlist-page/watchlist-coins/add-coin-modal/add-coin-modal.component";
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {ReactiveFormsModule} from "@angular/forms";
 
 const routes: Routes = [
-  {path: 'market', component: MarketPageComponent}
+  {path: 'market', component: MarketPageComponent},
+  {path: 'watchlist', component: WatchlistPageComponent},
 ]
 
 @NgModule({
-  declarations:[
+  declarations: [
     HeadingCardsComponent,
     MarketCoinsComponent,
-    MarketPageComponent
+    MarketPageComponent,
+    WatchlistPageComponent,
+    WatchlistCoinsComponent,
+    WatchlistOptionalsComponent,
+    TableComponent,
+    AddCoinModalComponent
   ],
   imports: [
     CommonModule,
@@ -28,9 +46,17 @@ const routes: Routes = [
     MatIconModule,
     CoreModule,
     MatButtonModule,
-    NgChartsModule
+    NgChartsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule
   ],
-  exports:[RouterModule]
+  exports:[RouterModule],
+  providers: [CoinDataService]
 })
 
 export class TopMenuModule{}

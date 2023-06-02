@@ -1,0 +1,16 @@
+@import "src/assets/styles/colors/colors";
+@import "src/assets/styles/fonts/fonts";
+
+.modal {
+  width: 100%;
+  overflow-x: hidden;
+
+  .title {
+    font-family: $Inter;
+    color: $dark-color;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.3rem;
+  }
+}

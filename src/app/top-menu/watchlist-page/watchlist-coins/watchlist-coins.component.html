@@ -1,0 +1,42 @@
+<div class="coins-container">
+  <div class="heading">
+    <div class="text">
+      <h4>Watchlist</h4>
+      <p>Update 16/02/2023 at 02:30 PM</p>
+    </div>
+    <button mat-button (click)="openDialog()">
+      <mat-icon>add</mat-icon>
+      Add Coin
+    </button>
+  </div>
+  <div class="coins">
+    <div class="options">
+      <div class="left-options">
+        <button class="open-btn" mat-icon-button [matMenuTriggerFor]="belowMenu" aria-label="Watchlist">
+          Watchlist
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+        <mat-menu #belowMenu="matMenu" yPosition="below">
+          <button mat-menu-item>
+            <mat-icon>dialpad</mat-icon>
+            <span>Redial</span>
+          </button>
+        </mat-menu>
+
+        <button class="add"><mat-icon>add</mat-icon></button>
+      </div>
+
+      <div class="right-options">
+        <button class="icon-btn"><mat-icon>border_all</mat-icon></button>
+        <button class="icon-btn"><mat-icon>table_chart</mat-icon></button>
+        <div class="search-field-cont">
+          <input (keyup)="applyFilter($event)" id="search-field" type="text" placeholder="Search Coin Name">
+          <button>
+            <mat-icon>search</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    <app-table class="coins" [length]="coins.length" [currencies]="currencies"></app-table>
+  </div>
+</div>

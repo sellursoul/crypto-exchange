@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PriceService} from "../../../shared/services/price.service";
 import {map, switchMap, timer} from "rxjs";
-import {Icon} from "../../../shared/interfaces/interfaces";
+import {CoinsArrayEl, Icon} from "../../../shared/interfaces/interfaces";
 
 @Component({
   selector: 'app-heading-cards',
@@ -10,7 +10,7 @@ import {Icon} from "../../../shared/interfaces/interfaces";
 })
 export class HeadingCardsComponent implements OnInit {
 
-  currencies: any[] = []
+  currencies: CoinsArrayEl[] = []
   icons: Icon[] = [
     {src: 'assets/top-menu-imgs/market-imgs/BNB.png', alt: 'BNB-icon'},
     {src: 'assets/top-menu-imgs/market-imgs/DOT.png', alt: 'DOT-icon'},
@@ -24,18 +24,17 @@ export class HeadingCardsComponent implements OnInit {
   ngOnInit(): void {
     timer(0, 60000).pipe(
       switchMap(() => {
-        return this.priceService.getCurrencies('ETH,BNB,LTC,DOT').pipe(
+        const coins = 'ETH,BNB,LTC,DOT'
+        return this.priceService.getCurrencies(coins).pipe(
           map((data) => {
-            console.log(data)
-            const Coins = Object.values(data.data)
-            this.priceService.updateData(Coins, this.icons)
-            return Coins
+            const coinsData = Object.values(data.data)
+            this.priceService.updateData(coinsData, this.icons)
+            return coinsData
           })
         )
       })
     ).subscribe( response => {
       this.currencies = response
-      console.log(response)
     })
   }
 

@@ -1,0 +1,148 @@
+@import "src/assets/styles/colors/colors";
+@import "src/assets/styles/fonts/fonts";
+
+.coins-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.5rem;
+  gap: 2.5rem;
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.125rem;
+    width: 8rem;
+    background-color: transparent;
+    color: $gray-color;
+    border: 1px solid rgba(204, 206, 217, 0.15);
+    border-radius: 0.3125rem;
+    font-family: $Inter;
+  }
+}
+
+.heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: $Inter;
+
+  .text {
+    h4 {
+      color: $white-color;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.44rem;
+      line-height: 1.75rem;
+    }
+
+    p {
+      color: $gray-color;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 0.9rem;
+      line-height: 1rem;
+    }
+  }
+}
+
+.coins {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 1.3rem;
+
+  .options {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+
+    .left-options {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 3rem;
+      width: 40%;
+
+      button {
+        background-color: $active-color;
+        border-radius: .3125rem;
+        color: $white-color;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.1rem;
+        line-height: 1.375rem;
+      }
+
+      .add {
+        width: 3.125rem;
+        height: 3.2rem;
+        border-radius: .3125rem;
+        border: none;
+        background-color: $dark-color;
+      }
+    }
+    .right-options {
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: row;
+      gap: 1.5rem;
+      width: 60%;
+
+      .icon-btn {
+        width: 2.2rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border: none;
+        font-family: $Inter;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+      }
+
+      .search-field-cont {
+        height: 3rem;
+        display: flex;
+        flex-direction: row;
+        gap: 0.3rem;
+        align-items: center;
+
+        button {
+          width: 2.2rem;
+          background: none;
+          border-radius: 0.3rem;
+          border: none;
+        }
+
+        mat-icon {
+          color: $gray-color;
+        }
+      }
+    }
+  }
+}
+
+#search-field {
+  height: 3rem;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 0.12rem solid $gray-color;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  color: $gray-color;
+}
+
+#search-field:focus {
+  outline: 0.12rem solid $gray-color;
+}
+
+button:hover {
+  opacity: 0.7;
+}

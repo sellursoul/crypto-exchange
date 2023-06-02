@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {map, switchMap, timer} from "rxjs";
-import {Icon} from "../../shared/interfaces/interfaces";
+import {CoinsArrayEl, Icon} from "../../shared/interfaces/interfaces";
 import {PriceService} from "../../shared/services/price.service";
 
 @Component({
@@ -9,7 +9,7 @@ import {PriceService} from "../../shared/services/price.service";
   styleUrls: ['./top-market-cont.component.scss']
 })
 export class TopMarketContComponent implements OnInit{
-  currencies: any[] = []
+  currencies: CoinsArrayEl[] = []
   icons: Icon[] = [
     {src: 'assets/home-imgs/icons/BNB-icon.png', alt: 'BNB-icon'},
     {src: 'assets/home-imgs/icons/BTC-icon.png', alt: 'BTC-icon'},
@@ -23,15 +23,17 @@ export class TopMarketContComponent implements OnInit{
   ngOnInit() {
     timer(0, 60000).pipe(
       switchMap(() => {
-        return this.priceService.getCurrencies('BTC,BNB,ETH,XRP').pipe(
+        const coins = 'BTC,BNB,ETH,XRP';
+        return this.priceService.getCurrencies(coins).pipe(
           map((data) => {
-            const cryptoData = Object.values(data.data)
-            this.priceService.updateData(cryptoData, this.icons)
-            return cryptoData
+            const coinsData = Object.values(data.data)
+            this.priceService.updateData(coinsData, this.icons)
+            return coinsData
           })
         )
       })).subscribe(resp => {
       this.currencies = resp
+      console.log(this.currencies)
     })
   }
 

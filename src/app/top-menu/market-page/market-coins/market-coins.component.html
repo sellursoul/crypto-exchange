@@ -1,1 +1,112 @@
-<p>market-coins works!</p>
+<div class="market-coins-container">
+  <div class="search-bar">
+    <div class="filters">
+      <div class="filter-btns">
+        <button class="filter-btn" (click)="gainersSort(sortTypes.Gainers)">Top Gainers</button>
+        <button class="filter-btn" (click)="losersSort(sortTypes.Losers)">Top Loser</button>
+        <button class="filter-btn" (click)="dateSort(sortTypes.NewInMarket)">New in market</button>
+        <button class="filter-btn" (click)="tradingSort(sortTypes.TopTrading)">Top in trading</button>
+        <button class="filter-btn" (click)="volumeSort(sortTypes.TopVolume)">Top in volume</button>
+      </div>
+      <div class="search-field-cont">
+        <input (keyup)="applyFilter($event)" id="search-field" type="text" placeholder="Search Coin Name">
+        <button>
+          <mat-icon>search</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="hr"></div>
+  </div>
+  <div class="coin-list">
+    <div class="selectors">
+      <div class="left-selectors">
+        <div>
+          <button class="open-btn" mat-icon-button [matMenuTriggerFor]="belowMenu" aria-label="Category">
+            Category
+            <mat-icon>keyboard_arrow_down</mat-icon>
+          </button>
+          <mat-menu #belowMenu="matMenu" yPosition="below">
+            <button mat-menu-item>
+              <mat-icon>dialpad</mat-icon>
+              <span>Redial</span>
+            </button>
+          </mat-menu>
+        </div>
+        <div>
+          <button class="open-btn" mat-icon-button [matMenuTriggerFor]="belowMenu" aria-label="Algorithm">
+            Algorithm
+            <mat-icon>keyboard_arrow_down</mat-icon>
+          </button>
+          <mat-menu #belowMenu="matMenu" yPosition="below">
+            <button mat-menu-item>
+              <mat-icon>dialpad</mat-icon>
+              <span>Redial</span>
+            </button>
+          </mat-menu>
+        </div>
+        <div>
+          <button class="open-btn" mat-icon-button [matMenuTriggerFor]="belowMenu" aria-label="Platform">
+            Platform
+            <mat-icon>keyboard_arrow_down</mat-icon>
+          </button>
+          <mat-menu #belowMenu="matMenu" yPosition="below">
+            <button mat-menu-item>
+              <mat-icon>dialpad</mat-icon>
+              <span>Redial</span>
+            </button>
+          </mat-menu>
+        </div>
+        <div>
+          <button class="open-btn" mat-icon-button [matMenuTriggerFor]="belowMenu" aria-label="Industry">
+            Industry
+            <mat-icon>keyboard_arrow_down</mat-icon>
+          </button>
+          <mat-menu #belowMenu="matMenu" yPosition="below">
+            <button mat-menu-item>
+              <mat-icon>dialpad</mat-icon>
+              <span>Redial</span>
+            </button>
+          </mat-menu>
+        </div>
+      </div>
+      <div class="right-selectors">
+        <div>
+          <button class="wide-btn" mat-icon-button [matMenuTriggerFor]="belowMenu" aria-label="Category">
+            Show 20
+            <mat-icon>keyboard_arrow_down</mat-icon>
+          </button>
+          <mat-menu #belowMenu="matMenu" yPosition="below">
+            <button mat-menu-item>
+              <mat-icon>dialpad</mat-icon>
+              <span>Redial</span>
+            </button>
+          </mat-menu>
+        </div>
+        <button class="icon-btn" mat-icon-button>
+          <mat-icon>list</mat-icon>
+        </button>
+        <button class="icon-btn" mat-icon-button>
+          <mat-icon>apps</mat-icon>
+        </button>
+        <div>
+          <button class="wide-btn" mat-icon-button [matMenuTriggerFor]="belowMenu" aria-label="Platform">
+            <mat-icon>table_chart</mat-icon>
+            Customize
+          </button>
+          <mat-menu #belowMenu="matMenu" yPosition="below">
+            <button mat-menu-item>
+              <mat-icon>dialpad</mat-icon>
+              <span>Redial</span>
+            </button>
+          </mat-menu>
+        </div>
+        <button class="wide-btn" mat-icon-button>
+          <mat-icon>cancel</mat-icon>
+          Clear Filter
+        </button>
+      </div>
+    </div>
+    <div class="hr"></div>
+    <app-table class="coins" [length]="coins.length" [currencies]="currencies"></app-table>
+  </div>
+</div>

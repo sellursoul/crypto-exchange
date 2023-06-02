@@ -7,17 +7,17 @@
     </div>
     <div class="heading-selections">
       <div>
-        <button class="open-btn" mat-icon-button [matMenuTriggerFor]="belowMenu" aria-label="Filter">
-          <mat-icon>sort</mat-icon>
-          Filter
-          <mat-icon>keyboard_arrow_down</mat-icon>
-        </button>
-        <mat-menu #belowMenu="matMenu" yPosition="below">
-          <button mat-menu-item>
-            <mat-icon>dialpad</mat-icon>
-            <span>Redial</span>
+          <button class="open-btn" mat-icon-button [matMenuTriggerFor]="belowMenu" aria-label="Filter">
+            <mat-icon>sort</mat-icon>
+            Filter
+            <mat-icon>keyboard_arrow_down</mat-icon>
           </button>
-        </mat-menu>
+          <mat-menu #belowMenu="matMenu" yPosition="below">
+            <button mat-menu-item>
+              <mat-icon>dialpad</mat-icon>
+              <span>Redial</span>
+            </button>
+          </mat-menu>
       </div>
       <div>
         <button class="open-btn" mat-icon-button [matMenuTriggerFor]="belowMenu" aria-label="Date">
@@ -38,7 +38,7 @@
     <a class="card" *ngFor="let currency of currencies">
       <div class="coin-info">
         <div class="coin-name">
-          <img src="{{currency.src.src}}" alt="{{currency.src.alt}}">
+          <img src="{{currency.src?.src}}" alt="{{currency.src?.alt}}">
           <p>{{currency.name}}</p>
         </div>
         <p>{{currency.price | currency}}</p>

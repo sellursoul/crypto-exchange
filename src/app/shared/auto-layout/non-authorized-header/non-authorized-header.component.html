@@ -1,7 +1,7 @@
 <section class="navbar_container">
   <div class="navbar_area">
     <div class="logo">
-      <img src="../../../../assets/common_imgs/Logo.png" alt="Logo">
+      <img [routerLink]="['/']" src="../../../../assets/common_imgs/Logo.png" alt="Logo">
     </div>
     <ul class="nav_btns">
       <li class="nav_btn" *ngFor="let point of menuPoints"><a [routerLink]="['/menu', point | lowercase]">{{point}}</a></li>
