@@ -22,10 +22,14 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {ReactiveFormsModule} from "@angular/forms";
+import { PaymentFormComponent } from './watchlist-page/watchlist-optionals/payment-form/payment-form.component';
+import { CoinListComponent } from './watchlist-page/watchlist-optionals/coin-list/coin-list.component';
+import {MatSelectModule} from "@angular/material/select";
+import {AuthGuard} from "../auth/shared/services/auth.guard";
 
 const routes: Routes = [
   {path: 'market', component: MarketPageComponent},
-  {path: 'watchlist', component: WatchlistPageComponent},
+  {path: 'watchlist/:id', component: WatchlistPageComponent, canActivate:[AuthGuard]},
 ]
 
 @NgModule({
@@ -37,7 +41,9 @@ const routes: Routes = [
     WatchlistCoinsComponent,
     WatchlistOptionalsComponent,
     TableComponent,
-    AddCoinModalComponent
+    AddCoinModalComponent,
+    PaymentFormComponent,
+    CoinListComponent
   ],
   imports: [
     CommonModule,
@@ -53,7 +59,8 @@ const routes: Routes = [
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   exports:[RouterModule],
   providers: [CoinDataService]

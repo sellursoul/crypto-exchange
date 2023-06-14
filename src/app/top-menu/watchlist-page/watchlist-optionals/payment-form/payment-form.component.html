@@ -1,0 +1,42 @@
+<form class="payment-form" [formGroup]="paymentForm" (ngSubmit)="exchange()">
+  <h4>Exchange Coin</h4>
+  <div class="balance">
+    <mat-icon>account_balance_wallet</mat-icon>
+    {{amount | currency:'USD':'symbol':'1.2-2'}}
+  </div>
+
+  <div class="converter-container">
+    <mat-form-field class="payment-input">
+      <mat-label [ngClass]="'text-color'">Coin</mat-label>
+      <input matInput class="amount" [ngStyle]="{'color': whiteColor}" (input)="convert()" type="number" formControlName="coin">
+    </mat-form-field>
+    <mat-form-field class="payment-select">
+      <mat-select (change)="convert()" formControlName="firstCurrency">
+        <mat-option *ngFor="let coin of coins" [value]="coin">
+          {{coin}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="swap"><mat-icon (click)="swap()" svgIcon="swap-icon"></mat-icon></div>
+
+  <div class="converter-container">
+    <mat-form-field class="payment-input">
+      <mat-label [ngClass]="'text-color'">Change</mat-label>
+      <input matInput class="amount" [ngStyle]="{'color': whiteColor}" type="number" formControlName="change">
+    </mat-form-field>
+    <mat-form-field class="payment-select">
+      <mat-select (change)="convert()" formControlName="secondCurrency">
+        <mat-option *ngFor="let coin of coins" [value]="coin">
+          {{coin}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="fees">No extra fees:</div>
+
+  <button class="submit-btn">Exchange</button>
+
+</form>

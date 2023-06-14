@@ -70,7 +70,8 @@ export class LoginPageComponent implements OnInit {
 
     login$.subscribe(resp => {
       console.log(resp)
-      this.router.navigate(['/'])
+      const userId = resp.localId
+      this.router.navigate(['/menu', 'watchlist', userId])
       this.isLoading = false
     }, errorMessage => {
       this.error = errorMessage

@@ -1,1 +1,7 @@
-<p>watchlist-optionals works!</p>
+<aside class="payment-cont">
+
+  <app-payment-form class="payment-card" [currencies]="currencies$ | async" [coins]="coins"></app-payment-form>
+
+  <app-coin-list class="payment-card"></app-coin-list>
+
+</aside>

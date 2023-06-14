@@ -1,0 +1,134 @@
+@import "src/assets/styles/colors/colors";
+@import "src/assets/styles/fonts/fonts";
+
+.coins-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  .sorts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: .2rem;
+
+    .btn-container {
+      width: 33.3%;
+      display: flex;
+      flex-direction: column;
+      gap: .8rem;
+
+      .hr {
+        height: 1px;
+        background-color: $info-color;
+        width: 100%;
+      }
+
+      .hr.active-hr {
+        background-color: $active-color;
+      }
+
+      button {
+        background-color: transparent;
+        border: none;
+        color: $info-color;
+        font-family: $Inter;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.3rem;
+      }
+
+      button.active {
+        color: $active-color;
+      }
+    }
+  }
+
+  .highlight-bar {
+    height: 1px;
+    background-color: $info-color;
+    transition: left 0.3s ease;
+    margin: .5rem;
+  }
+}
+
+.coins::-webkit-scrollbar {
+  width: .3rem;
+  background-color: rgb(8, 8, 8, 0.4);
+}
+
+.coins::-webkit-scrollbar-thumb {
+  background-color: rgba(204, 206, 217, 0.3);
+  border-radius: 0.35rem;
+}
+
+.coins::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(204, 206, 217, 0.5);
+}
+
+.coins {
+  width: 100%;
+  max-height: 18rem;
+  overflow-y: scroll;
+}
+
+.mat-column-name {
+  height: 3rem;
+}
+
+table {
+  height: 100%;
+  overflow-x: scroll;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+  background-color: transparent;
+  color: $info-color;
+
+
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin-top: .5rem;
+  }
+
+  .mat-mdc-header-cell {
+    color: $info-color;
+    font-family: $Inter;
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 1.025rem;
+  }
+
+  .mat-mdc-row .mat-mdc-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+    color: $white-color;
+    font-family: $Inter;
+  }
+
+  thead {
+    width: 100%;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    border-bottom: 0.15rem solid rgba(239, 239, 239, 0.15);
+
+    th {
+      padding-bottom: 1.25rem;
+    }
+  }
+}
+
+.negative {
+  color: #DC2626;
+
+}
+
+.positive {
+  color: #03A66D;
+}

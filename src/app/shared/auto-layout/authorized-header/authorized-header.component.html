@@ -5,7 +5,7 @@
   </div>
 
   <ul class="nav_btns">
-    <li class="nav_btn" *ngFor="let point of menuPoints"><a [routerLink]="['/menu', '{{point | lowercase}}']">{{point}}</a></li>
+    <li class="nav_btn" *ngFor="let point of menuPoints"><a [routerLink]="['/menu', point | lowercase, 'userId']">{{point}}</a></li>
   </ul>
 
   <div class="wallet-trade">
